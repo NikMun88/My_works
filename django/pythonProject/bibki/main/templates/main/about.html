@@ -1,0 +1,45 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Про нас {% endblock %}
+{% load static %}
+{% block style %} {% endblock %}
+{% block content %}
+    <style>
+        /* Стили для анимации (CSS) */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        .content {
+            float: right;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            max-width: 400px;
+            background-color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);}
+
+    </style>
+    <div class="features">
+        <h1>Про нас</h1>
+        <div class="content fade-in" id="section1">
+            <h1>Первый блок</h1>
+            <p>Здесь должна была быть информация про нас, однако вместо этого лучше всего было реализовать анимацию</p>
+        </div>
+        <div class="content fade-in" id="section2">
+            <h2>Второй блок, тоже появляется красиво</h2>
+            <p>Ничего важного, просто текст</p>
+        </div>
+        <div class="content fade-in" id="section3">
+            <h2>Третий блок</h2>
+            <p>Да мало интересного, просто небольшой текст ни о чем</p>
+        </div>
+    </div>
+<script src="{% static 'main/js/main.js' %}"></script>
+{% endblock %}

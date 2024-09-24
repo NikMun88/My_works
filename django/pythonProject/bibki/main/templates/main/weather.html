@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Информация о погоде {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+
+        <form method="get" action="{% url 'weather' %}">
+        <label for="city">Название города (попробуйте ошибиться):</label>
+        <input type="text" id="city" name="city" value="{{ request.GET.city }}">
+        <button type="submit">Начать!</button>
+    </form>
+    </div>
+
+    {% if weather %}
+<br><br>
+    <div class="weather1">
+        <p>{{ weather.temp_datetime }} <br> {{ weather.temp_city }}</p>
+        <p>{{ weather.temp_value }}</p>
+        <p>{{ weather.temp_resume }}</p>
+    </div>
+    <div class="weather2">
+        <p>{{ weather.temp_other1 }} </p>
+        <p>{{ weather.temp_other2 }} </p>
+        <p>{{ weather.temp_other3 }}</p>
+    </div>
+    {% endif %}
+{% endblock %}

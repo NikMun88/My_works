@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Данный сайт являет собой представление примера работы на django <br>
+        Слева реализовано меню навигации. В нем имеются:
+        </p>
+        {% for el in values %} <p>{{ el }}</p> {% endfor %}
+        <p></p>
+    </div>
+{% endblock %}
